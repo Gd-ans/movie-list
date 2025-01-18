@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 
 const usePageListData = (data = [], pageNumber = 1) => {
-    // Ensure data is an array and pageNumber is a valid number
     const validData = Array.isArray(data) ? data : [];
     const validPageNumber = typeof pageNumber === 'number' && pageNumber > 0 ? pageNumber : 1;
 
