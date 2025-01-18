@@ -1,0 +1,7 @@
+const MovieSearchAction = {
+    GET_MOVIE_LIST_LOADING: "GET_MOVIE_LIST_LOADING",
+    GET_MOVIE_LIST_SUCCESS: "GET_MOVIE_LIST_SUCCESS",
+    GET_MOVIE_LIST_FAILURE: "GET_MOVIE_LIST_FAILURE",
+}
+
+export default MovieSearchAction

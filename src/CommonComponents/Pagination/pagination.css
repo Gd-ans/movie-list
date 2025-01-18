@@ -1,0 +1,37 @@
+.pagination-wrapper .pagination-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.pagination-wrapper .pagination-item .arrow-btn-wrap {
+    display: flex;
+    gap: 6px;
+}
+
+.pagination-wrapper .pagination-item .arrow-btn-wrap .arrow {
+    cursor: auto;
+}
+
+.pagination-wrapper .pagination-item .arrow-btn-wrap .arrow:disabled {
+    opacity: 0.6;
+}
+
+.pagination-wrapper .pagination-item .arrow-btn-wrap .arrow.right i,
+.pagination-wrapper .pagination-item .arrow-btn-wrap .arrow.left i {
+    display: block;
+    -webkit-mask-image: url('../../Assets/icons/left-arrow.svg');
+    mask-image: url('../../Assets/icons/left-arrow.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    height: 12px;
+    width: 12px;
+    background-color: blue;
+    mask-size: contain;
+    transform: rotate(180deg);
+}
+
+.pagination-wrapper .pagination-item .arrow-btn-wrap .arrow.left i {
+    transform: rotate(0deg);
+}
