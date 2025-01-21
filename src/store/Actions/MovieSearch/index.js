@@ -9,15 +9,16 @@ const getMovieList = () => {
         };
         dispatch({ type: 'GET_MOVIE_LIST_LOADING' });
         try {
-            const response = await fetch(url, { method: 'GET', headers });
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+            const response = await fetch(url, { method: 'GET', headers }); // COMMENT THIS FOR SEE DEMO DATA
+            if (!response.ok) {  // COMMENT THIS FOR SEE DEMO DATA
+                throw new Error(`HTTP error! Status: ${response.status}`); // COMMENT THIS FOR SEE DEMO DATA
+            }  // COMMENT THIS FOR SEE DEMO DATA
 
-            const data = await response.json();
-            // setTimeout(() => {
-            dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_SUCCESS, payload: data });
-            // }, 2000);
+            const data = await response.json(); // COMMENT THIS FOR SEE DEMO DATA
+            // setTimeout(() => { // COMMENT out THIS
+            dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_SUCCESS, payload: data }); // COMMENT THIS FOR SEE DEMO DATA
+            //  dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_SUCCESS, payload: dummyData }); // COMMENT out THIS
+            // }, 1000); // COMMENT out THIS
         } catch (error) {
             // console.error('Error fetching movie list:', error);
             dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_FAILURE, payload: error.message });
