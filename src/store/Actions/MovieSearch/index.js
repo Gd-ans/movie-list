@@ -8,21 +8,34 @@ const getMovieList = () => {
             'x-rapidapi-host': 'imdb236.p.rapidapi.com',
         };
         dispatch({ type: 'GET_MOVIE_LIST_LOADING' });
-        try {
-            const response = await fetch(url, { method: 'GET', headers }); // COMMENT THIS FOR SEE DEMO DATA
-            if (!response.ok) {  // COMMENT THIS FOR SEE DEMO DATA
-                throw new Error(`HTTP error! Status: ${response.status}`); // COMMENT THIS FOR SEE DEMO DATA
-            }  // COMMENT THIS FOR SEE DEMO DATA
 
-            const data = await response.json(); // COMMENT THIS FOR SEE DEMO DATA
-            // setTimeout(() => { // COMMENT out THIS
-            dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_SUCCESS, payload: data }); // COMMENT THIS FOR SEE DEMO DATA
-            //  dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_SUCCESS, payload: dummyData }); // COMMENT out THIS
-            // }, 1000); // COMMENT out THIS
+
+        // COMMENT THIS FOR SEE DUMMY DATA--------->
+        //start 
+        try {
+            const response = await fetch(url, { method: 'GET', headers });
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_SUCCESS, payload: data });
+
         } catch (error) {
-            // console.error('Error fetching movie list:', error);
             dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_FAILURE, payload: error.message });
         }
+
+        //End
+
+        // COMMENT OUT THIS FOR SEE DUMMY DATA--------->
+
+        // try {
+        //     setTimeout(() => {
+        //         dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_SUCCESS, payload: dummyData });
+        //     }, 1000);
+        // } catch (error) {
+        //     dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_FAILURE, payload: error.message });
+        // }
     };
 };
 
