@@ -19,7 +19,7 @@ const getMovieList = () => {
             dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_SUCCESS, payload: data });
             // }, 2000);
         } catch (error) {
-            console.error('Error fetching movie list:', error);
+            // console.error('Error fetching movie list:', error);
             dispatch({ type: MovieSearchAction.GET_MOVIE_LIST_FAILURE, payload: error.message });
         }
     };

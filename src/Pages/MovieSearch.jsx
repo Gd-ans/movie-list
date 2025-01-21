@@ -35,7 +35,6 @@ const MovieSearch = () => {
 
     // Get data for the current page
     const dataForCurrentPage = usePageListData(filteredData, pageNumber);
-    console.log(filteredData, dataForCurrentPage, "debouncedQuerydebouncedQuery")
 
     return (
         <div className="movie-search">
@@ -53,10 +52,10 @@ const MovieSearch = () => {
                 onChange={(e) => { return setQuery(e.target.value), setPageNumber(1) }}
             />
             {loading ? (
-                <div class="three-dots-loader">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+                <div className="three-dots-loader">
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                    <div className="dot"></div>
                 </div>
 
 
