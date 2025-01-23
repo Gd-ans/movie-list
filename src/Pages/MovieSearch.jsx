@@ -63,7 +63,7 @@ const MovieSearch = () => {
                 <div className="error-message">Error: {error}</div>
             ) : (
                 <div className="movie-list">
-                    {dataForCurrentPage.map((movie) => (
+                    {dataForCurrentPage?.length ? dataForCurrentPage?.map((movie) => (
                         <div key={movie.id} className="movie-item">
                             <img
                                 src={movie?.primaryImage && movie?.primaryImage}
@@ -76,7 +76,8 @@ const MovieSearch = () => {
                                 <p className="movie-description">{movie?.description && movie?.description}</p>
                             </div>
                         </div>
-                    ))}
+                    )) : <p className="movie-description">No data found !</p>
+                    }
                 </div>
             )}
 
