@@ -30,7 +30,7 @@ const MovieSearch = () => {
 
     // Filter movies  
     const filteredData = data?.filter((movie) =>
-        movie?.title?.toLowerCase()?.includes(debouncedQuery.toLowerCase())
+        movie?.title?.toLowerCase()?.includes(debouncedQuery?.toLowerCase())
     );
 
     // Get data for the current page
