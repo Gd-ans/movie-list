@@ -30,7 +30,7 @@ const MovieSearch = () => {
 
     // Filter movies  
     const filteredData = data?.filter((movie) =>
-        movie?.title?.toLowerCase()?.includes(debouncedQuery?.toLowerCase())
+        movie?.primaryTitle?.toLowerCase()?.includes(debouncedQuery?.toLowerCase())
     );
 
     // Get data for the current page
@@ -66,14 +66,14 @@ const MovieSearch = () => {
                     {dataForCurrentPage.map((movie) => (
                         <div key={movie.id} className="movie-item">
                             <img
-                                src={movie.primaryImage}
-                                alt={movie.title}
+                                src={movie?.primaryImage && movie?.primaryImage}
+                                alt={movie?.primaryImage && movie?.primaryImage}
                                 loading="lazy"
                                 className="movie-image"
                             />
                             <div className="movie-details">
-                                <h2 className="movie-title">{movie.title}</h2>
-                                <p className="movie-description">{movie.description}</p>
+                                <h2 className="movie-title">{movie?.primaryTitle && movie?.primaryTitle}</h2>
+                                <p className="movie-description">{movie?.description && movie?.description}</p>
                             </div>
                         </div>
                     ))}
